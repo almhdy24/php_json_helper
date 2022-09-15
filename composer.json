@@ -1,0 +1,19 @@
+{
+    "name": "almhdy/json_helper",
+    "description": "Simple lib to work with json file easier using php",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elmahdi Abdallh",
+            "email": "almhdybdallh25@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
