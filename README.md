@@ -1,7 +1,8 @@
-# JSON
+# PHP JSON HELPER
 
 [![Current version](https://img.shields.io/packagist/v/beste/json.svg?logo=composer)](https://packagist.org/packages/almhdy/json_helper)
-[![Supported PHP version](https://img.shields.io/static/v1?l
+[![Supported PHP version](https://img.shields.io/static/v1?logo=php&label=PHP&message=~7.4.0%20||%20~8.0.0%20||%20~8.1.0&color=777bb4)](https://packagist.org/packages/almhdy/json_helper)
+
 A simple lib to work with json file easier using php.
 ## Usage
 
@@ -37,11 +38,11 @@ $data = [
 
 var_dump($json->read());
 
-```
+/*
 When something goes wrong make sure that php can write and read in
 In you server .
 If the path is not valid it is throw error invalid path
-}
+*/
 ```
 
 ## Installation
