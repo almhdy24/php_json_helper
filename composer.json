@@ -3,6 +3,7 @@
     "description": "Simple lib to work with json file easier using php",
     "type": "library",
     "version": 1.0,
+    "keywords": ["json", "helper"],
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -17,6 +18,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.6"
+        "php": "~7.4.0 || ~8.0.0 || ~8.1.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.13"
     }
 }
