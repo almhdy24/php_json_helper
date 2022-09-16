@@ -51,8 +51,4 @@ If the path is not valid it is throw error invalid path
 composer require almhdy/json_helper
 ```
 
-## Running tests
 
-```shell
-composer run tests
-```
