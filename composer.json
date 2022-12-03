@@ -1,8 +1,8 @@
 {
     "name": "almhdy/json_helper",
-    "description": "Simple lib to work with json file easier using php",
+    "description": "Simple lib to work with json file easier using php, It's now supporting arabic lang & others.",
     "type": "library",
-    "version": 1.0,
+    "version": 1.2,
     "keywords": ["json", "helper"],
     "license": "MIT",
     "autoload": {
@@ -16,9 +16,9 @@
             "email": "almhdybdallh25@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "php": "~7.4.0 || ~8.0.0 || ~8.1.0",
+        "php": "~5.6.0|| ~7.4.0 || ~8.0.0 || ~8.1.0",
         "ext-json": "*"
     }
 }
