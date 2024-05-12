@@ -1,54 +1,60 @@
-# PHP JSON HELPER
+# SimpleJson Class
 
-[![Current version](https://img.shields.io/packagist/v/beste/json.svg?logo=composer)](https://packagist.org/packages/almhdy/json_helper)
-[![Supported PHP version](https://img.shields.io/static/v1?logo=php&label=PHP&message=~7.4.0%20||%20~8.0.0%20||%20~8.1.0&color=777bb4)](https://packagist.org/packages/almhdy/json_helper)
+The `SimpleJson` class is a powerful tool that allows you to work with JSON data as if it were a database. With features to read, search, update, and delete data within a JSON file, this class provides a flexible and efficient way to query and manage your JSON data.
 
-A simple lib to work with json file easier using php.
-## Usage
+## Features
+- **Read Data**: Retrieve all data stored in the JSON file.
+- **Search Data**: Filter data based on specified conditions and fetch matching results.
+- **Update Data**: Update existing data that meets certain conditions with new information.
+- **Delete Data**: Remove data entries that match specific conditions from the JSON file.
 
+## Getting Started
+1. **Installation**: Include the `SimpleJson` class in your PHP project.
+2. **Initialization**: Create an instance of the `SimpleJson` class by providing the path to your JSON file.
+3. **Usage**: Use the provided methods to interact with and manipulate your JSON data.
+
+## Methods
+
+### `read(): array`
+- **Description**: Retrieves all data stored in the JSON file.
+- **Return Value**: An array representing the JSON data.
+
+### `search(array $conditions): array`
+- **Description**: Filters data based on specified conditions and returns matching results.
+- **Parameters**:
+  - `$conditions` (array): Associative array of key-value pairs representing the conditions to match.
+- **Return Value**: An array containing the matched data entries.
+
+### `update(array $conditions, array $updatedData): bool`
+- **Description**: Updates data that meets certain conditions with new information.
+- **Parameters**:
+  - `$conditions` (array): Associative array of key-value pairs representing the conditions to match.
+  - `$updatedData` (array): Associative array of key-value pairs containing the updated data.
+- **Return Value**: A boolean indicating if the data was successfully updated.
+
+### `delete(array $conditions): bool`
+- **Description**: Deletes data entries that match specific conditions from the JSON file.
+- **Parameters**:
+  - `$conditions` (array): Associative array of key-value pairs representing the conditions to match.
+- **Return Value**: A boolean indicating if any data entries were deleted.
+
+## Example Usage
 ```php
-<?php
+// Initialize SimpleJson with a JSON file path
+$json = new SimpleJson('data.json');
 
-require_once("vendor/autoload.php");
+// Search for data based on conditions
+$searchResults = $json->search(['category' => 'books']);
 
-use App\Simple_json;
+// Update data entries based on conditions
+$updated = $json->update(['id' => 1], ['price' => 25.99]);
 
-//new object with file path
-
-// json helper will create file if not found but can't create dir for it
-
-$json = new Simple_json("./json/users.json");
-// some dummy data
-
-$data = [
-     'id' => 1,
-     "username" => "almhdy",
-     "password" => sha1(1234)
-    ];
-
-    //create json file if not exists.
-
-    $json->create();
-
-    // write data to created file
-
-    $json->write($data);
-
-    //show file after write show data
-
-var_dump($json->read());
-
-/*
-When something goes wrong make sure that php can write and read in
-In you server .
-If the path is not valid it is throw error invalid path
-*/
+// Delete data entries based on conditions
+$deleted = $json->delete(['category' => 'electronics']);
 ```
 
-## Installation
+## Important Notes
+- Ensure that the JSON file path provided during initialization exists and is accessible.
+- Handle errors and edge cases appropriately to maintain data integrity.
 
-```shell
-composer require almhdy/json_helper
-```
-
-
+The `SimpleJson` class simplifies the process of querying JSON data, providing a convenient solution for managing structured information. Explore the methods and unleash the power of JSON manipulation in your PHP projects.
